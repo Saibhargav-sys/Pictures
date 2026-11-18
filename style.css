@@ -74,6 +74,61 @@ h2 {
   letter-spacing: -0.035em;
 }
 
+.upload-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 28px;
+}
+
+.upload-button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid #20211e;
+  background: #20211e;
+  color: #fff;
+  font-size: 13px;
+}
+
+.upload-button:hover:not(:disabled) {
+  background: #ad775c;
+  border-color: #ad775c;
+}
+
+.upload-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.selected-file,
+.upload-status {
+  color: #777a74;
+  font-size: 12px;
+}
+
+.upload-status {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.upload-note {
+  margin: -18px 0 28px;
+  color: #777a74;
+  font-size: 11px;
+}
+
+.upload-status.error {
+  color: #a33a32;
+}
+
+#turnstile-widget:empty {
+  display: none;
+}
+
 .photo-grid {
   columns: 3 260px;
   column-gap: 18px;

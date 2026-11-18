@@ -1,13 +1,26 @@
 import json
+import re
 from pathlib import Path
 
 
 root = Path(__file__).resolve().parent.parent
 image_directory = root / "images"
 extensions = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"}
+
+
+def title_for(image):
+    stem = re.sub(
+        r"-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "",
+        image.stem,
+        flags=re.IGNORECASE,
+    )
+    return stem.replace("-", " ").replace("_", " ").title()
+
+
 photos = [
     {
-        "title": image.stem.replace("-", " ").replace("_", " ").title(),
+        "title": title_for(image),
         "src": image.relative_to(root).as_posix(),
         "spotlight": "spotlight" in image.relative_to(image_directory).parts,
     }
