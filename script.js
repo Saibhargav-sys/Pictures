@@ -16,8 +16,8 @@ async function loadPhotos() {
     throw new Error('photos.json must contain a list of photos');
   }
 
-  render(spotlightGrid, photos.filter(photo => photo.spotlight));
-  render(grid, photos);
+  if (spotlightGrid) render(spotlightGrid, photos.filter(photo => photo.spotlight));
+  if (grid) render(grid, photos);
 }
 
 function render(target, photos) {
@@ -86,7 +86,7 @@ document.addEventListener('keydown', event => {
 });
 
 loadPhotos().catch(error => {
-  for (const target of [spotlightGrid, grid]) {
+  for (const target of [spotlightGrid, grid].filter(Boolean)) {
     target.setAttribute('aria-busy', 'false');
     target.classList.add('empty');
     target.textContent = 'Photos could not be loaded.';
