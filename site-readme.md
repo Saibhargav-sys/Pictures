@@ -1,27 +1,18 @@
-# Stillframe — Minimal Photography Website
+# Stillframe
 
-A responsive, static photography website for GitHub Pages. No backend, account, or database required.
+A simple photo gallery hosted on GitHub Pages.
 
-## Preview locally
+## Add photos from your phone
 
-Open `index.html` in a browser, or run `python3 -m http.server 8000` in this folder and visit `http://localhost:8000`.
+The site is static, so it cannot safely write uploads back to GitHub by itself. Use GitHub's website to add photos; the Pages workflow publishes them automatically.
 
-## Publish to GitHub Pages
+1. Open the [images folder](https://github.com/Saibhargav-sys/Pictures/tree/main/images) in your browser and sign in to GitHub.
+2. Select **Add file → Upload files** and choose photos from your device.
+3. Commit the upload to `main`.
+4. Wait for the **Deploy to GitHub Pages** workflow to finish. The photos will then appear on the site.
 
-1. Sign in to GitHub. Do **not** share your password or personal access token.
-2. Create a public repository named `YOUR_USERNAME.github.io` (replace `YOUR_USERNAME` with your actual GitHub username). Alternatively, use any repository name for a project site.
-3. Upload `index.html`, `style.css`, `script.js`, and `images/` to the repository root, or push them with Git.
-4. In **Settings → Pages → Build and deployment**, select **Deploy from a branch**, choose `main` and `/ (root)`, and save.
-5. Visit `https://YOUR_USERNAME.github.io/`. For a project repository, use `https://YOUR_USERNAME.github.io/REPOSITORY_NAME/`.
+Use `.jpg`, `.jpeg`, `.png`, or `.webp` images. The photo title is generated from its filename, so a file named `sunset-at-home.jpg` appears as “Sunset At Home.” Keep files reasonably small for faster page loads. Uploaded photos become public on this repository and website.
 
-## Add images
+## Local preview
 
-Only publish images you own or have explicit permission to redistribute. Put them in `images/`, then edit the `photos` array at the top of `script.js`:
-
-```js
-{title:'My Photograph',category:'Portraits',src:'images/my-photo.jpg'}
-```
-
-Available categories: Portraits, Nature, Architecture, Travel. To add categories, also add corresponding filter buttons in `index.html`.
-
-The demo uses remote Unsplash image URLs as temporary examples; these depend on third-party availability and are not bundled with the website. Replace them before publication. GitHub Pages publishes website files publicly; it is not private storage.
+Run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000`. To preview newly added images locally, run `python3 scripts/build-photo-manifest.py` first.
