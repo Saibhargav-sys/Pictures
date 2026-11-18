@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
   font-family: Arial, Helvetica, sans-serif;
-  color: #202020;
-  background: #fff;
+  color: #20211e;
+  background: #fafaf8;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -30,113 +30,84 @@ button {
 }
 
 .topbar {
-  max-width: 1120px;
-  height: 72px;
+  max-width: 1440px;
+  height: 76px;
   margin: auto;
-  padding: 0 24px;
+  padding: 0 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e6e6e1;
 }
 
 .brand {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
+  letter-spacing: -0.05em;
 }
 
 nav {
   display: flex;
-  gap: 28px;
-  font-size: 14px;
+  gap: 30px;
+  font-size: 13px;
 }
 
-nav a:hover,
-.explore-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+nav a:hover {
+  color: #ad775c;
 }
 
-.home,
-.explore {
-  max-width: 1120px;
+.gallery-section {
+  max-width: 1440px;
   margin: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 58px 6% 72px;
 }
 
-.home {
-  padding-top: 96px;
-  padding-bottom: 88px;
+.gallery-section + .gallery-section {
+  border-top: 1px solid #e6e6e1;
 }
 
-.home h1 {
-  max-width: 650px;
-  margin: 0;
-  font-size: clamp(42px, 7vw, 72px);
-  letter-spacing: -0.06em;
-  line-height: 1.05;
-}
-
-.home p {
-  margin: 18px 0 26px;
-  color: #666;
-  font-size: 17px;
-}
-
-.explore-link {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.explore h2 {
-  margin: 0 0 24px;
-  font-size: 26px;
-}
-
-.explore {
-  padding-top: 24px;
-  padding-bottom: 80px;
-  border-top: 1px solid #eee;
+h1,
+h2 {
+  margin: 0 0 28px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
 }
 
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  columns: 3 260px;
+  column-gap: 18px;
 }
 
 .photo-grid.empty {
-  display: block;
-  color: #666;
-  font-size: 14px;
+  color: #777a74;
+  font-size: 13px;
 }
 
 .photo-card {
-  min-width: 0;
-  margin: 0;
+  break-inside: avoid;
+  margin: 0 0 18px;
 }
 
 .photo-card button {
   display: block;
   width: 100%;
+  overflow: hidden;
   padding: 0;
   border: 0;
-  background: none;
-  text-align: left;
+  background: #efefeb;
 }
 
 .photo-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: #f2f2f2;
+  height: auto;
+  transition: transform 350ms ease;
 }
 
-.photo-card figcaption {
-  padding-top: 10px;
-  font-size: 14px;
+.photo-card button:hover img,
+.photo-card button:focus-visible img {
+  transform: scale(1.025);
 }
 
 dialog {
@@ -211,27 +182,24 @@ dialog::backdrop {
 @media (max-width: 700px) {
   .topbar {
     height: 64px;
-    padding: 0 18px;
+    padding: 0 5%;
   }
 
   nav {
     gap: 20px;
   }
 
-  .home,
-  .explore {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .home {
-    padding-top: 76px;
-    padding-bottom: 68px;
+  .gallery-section {
+    padding: 40px 5% 52px;
   }
 
   .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 12px;
+    columns: 2 140px;
+    column-gap: 12px;
+  }
+
+  .photo-card {
+    margin-bottom: 12px;
   }
 
   .viewer {
@@ -255,5 +223,11 @@ dialog::backdrop {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }

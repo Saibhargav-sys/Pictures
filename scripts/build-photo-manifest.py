@@ -9,6 +9,7 @@ photos = [
     {
         "title": image.stem.replace("-", " ").replace("_", " ").title(),
         "src": image.relative_to(root).as_posix(),
+        "spotlight": "spotlight" in image.relative_to(image_directory).parts,
     }
     for image in sorted(image_directory.rglob("*"), key=lambda path: path.as_posix().lower())
     if image.is_file() and image.suffix.lower() in extensions

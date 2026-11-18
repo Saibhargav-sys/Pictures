@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="A collection of photographs by Stillframe.">
+    <meta name="theme-color" content="#fafaf8">
+    <meta name="description" content="Spotlight photographs and a growing photo collection.">
     <title>Stillframe — Photos</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -17,12 +17,11 @@
       </nav>
     </header>
     <main>
-      <section id="home" class="home">
-        <h1>Photos worth keeping.</h1>
-        <p>A simple place to share my photographs.</p>
-        <a class="explore-link" href="#explore">Explore photos <span aria-hidden="true">↓</span></a>
+      <section id="home" class="gallery-section">
+        <h1>Spotlight</h1>
+        <div id="spotlight-grid" class="photo-grid" aria-live="polite" aria-busy="true"></div>
       </section>
-      <section id="explore" class="explore">
+      <section id="explore" class="gallery-section">
         <h2>Explore</h2>
         <div id="photo-grid" class="photo-grid" aria-live="polite" aria-busy="true"></div>
       </section>

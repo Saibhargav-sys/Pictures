@@ -6,12 +6,12 @@ A simple photo gallery hosted on GitHub Pages.
 
 The site is static, so it cannot safely write uploads back to GitHub by itself. Use GitHub's website to add photos; the Pages workflow publishes them automatically.
 
-1. Open the [images folder](https://github.com/Saibhargav-sys/Pictures/tree/main/images) in your browser and sign in to GitHub.
+1. Open the [images folder](https://github.com/Saibhargav-sys/Pictures/tree/main/images) in your browser to add photos to Explore, or the [Spotlight folder](https://github.com/Saibhargav-sys/Pictures/tree/main/images/spotlight) to feature selected photos on Home.
 2. Select **Add file → Upload files** and choose photos from your device.
 3. Commit the upload to `main`.
 4. Wait for the **Deploy to GitHub Pages** workflow to finish. The photos will then appear on the site.
 
-Use `.jpg`, `.jpeg`, `.png`, or `.webp` images. The photo title is generated from its filename, so a file named `sunset-at-home.jpg` appears as “Sunset At Home.” Keep files reasonably small for faster page loads. Uploaded photos become public on this repository and website.
+Photos in Explore also appear in Spotlight when uploaded to `images/spotlight/`. Use `.jpg`, `.jpeg`, `.png`, or `.webp` images. Keep files reasonably small for faster page loads. Uploaded photos become public on this repository and website.
 
 ## Local preview
 
